@@ -4,12 +4,13 @@
 >
 > ## Mohamed A.
 > 
-> ## Miguel Aparicio
+> ## Miguel Aparicio García-Donas
 
 ## Tema 1: Azure CDN (Content Delivery Network) - Antonio Miralles Gutiérrez
 ## Preguntas:
 **- ¿Qué es Azure CDN y cuál es su propósito en el despliegue de aplicaciones web?**
 	
+
 	Azure Content Delivery Network es una red distribuida de servidores que puede proporcionar contenido web a los usuarios. Este tipo de red guarda el contenido en caché  de los servidores perimetrales en ubicaciones POP que estan cerca de los usuarios finales.
 	
 	Azure CDN ofrece a los desarrolladores una solución global para la entrega rápida de contenido con alto ancho de banda a los usuarios mediante el almacenamiento en caché del contenido en nodos físicos estratégicamente situados en todo el mundo. Azure CDN también puede acelerar el contenido dinámico, que no se puede almacenar en caché, mediante varias optimizaciones de red con POP de CDN. Por ejemplo, la optimización de rutas para omitir el protocolo de puerta de enlace de borde (BGP).
@@ -42,6 +43,62 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
 	
 	6- Una vez creado el punto de conexión de CDN, las optimizaciones de DSA se aplican a todos los archivos que coincidan con determinados criterios.
 
+
+
+## Tema 2: Implement Azure Function - Miguel A.
+
+## Preguntas:
+
+**¿Qué son las Azure Functions y para qué se utilizan?**
+
+```
+Azure Functions es un servicio proporcionado por Microsoft Azure que se utiliza para desarrollar y ejecutar rápidamente pequeños fragmentos de código llamados "funciones" en respuesta a eventos o desencadenadores específicos (triggers).
+
+Las Azure Functions se basan en el concepto de "computación sin servidor", lo que significa que no es necesario aprovisionar ni administrar servidores físicos o virtuales. En cambio, las funciones se ejecutan de forma automática y dinámica a medida que se desencadenan eventos definidos, como cambios en los datos de un almacenamiento en la nube, una solicitud HTTP o una actualización en una cola de mensajes.
+
+Las Azure Functions se utilizan en una amplia variedad de escenarios, incluyendo procesamiento de eventos en tiempo real, Integraciones y automatizaciones, desarrollo de aplicaciones móviles y web o procesamiento por lotes y Big Data.
+```
+
+
+
+**¿Cuáles son los desencadenadores (triggers) más comunes en Azure Functions?**
+
+```
+Los triggers más comunes son HTTP Trigger, Timer Trigger, Queue Trigger y Blob Trigger, y aunque son particularmente populares debido a su versatilidad, la elección del desencadenador dependerá de los requisitos y necesidades específicas de tu aplicación o proyecto.
+```
+
+
+
+**¿Cómo se configura y se despliega una Azure Function?**
+
+```
+1. Crea una cuenta de Azure Function:
+   - Ve al Portal de Azure y accede con tus credenciales.
+   - Haz clic en "Crear un recurso" en la esquina superior izquierda y busca "Azure Function".
+   - Selecciona "Func App" en los resultados de búsqueda y haz clic en "Crear".
+   - Completa la información requerida, como el nombre de la función, suscripción, grupo de recursos, etc.
+   - Selecciona el tiempo de ejecución, por ejemplo, Azure Functions v3 (.NET Core) o Azure Functions v4 (.NET 6), y el plan de hospedaje.
+   - Haz clic en "Revisar y crear" y, finalmente, en "Crear" para crear la cuenta de Azure Function.
+2. Configura la función:
+   - Una vez que se haya creado la cuenta de Azure Function, navega hasta ella en el Portal de Azure.
+   - En la sección de Configuración, puedes establecer variables de aplicación, configuraciones de conexión y otras configuraciones específicas de la función.
+   - Puedes utilizar la configuración para ajustar el comportamiento de tu función, como cadenas de conexión a bases de datos, configuración de tiempo de espera, configuraciones personalizadas, etc.
+3. Desarrolla la función:
+   - Para desarrollar la función, puedes usar el Azure Portal, Visual Studio Code con la extensión de Azure Functions, o cualquier otra herramienta compatible.
+   - Crea un nuevo proyecto de función o abre un proyecto existente en tu entorno de desarrollo preferido.
+   - Define tus funciones y lógica de negocio dentro de archivos separados para cada función.
+   - Puedes usar el lenguaje de programación que prefieras, ya sea C#, JavaScript, Python, etc., dependiendo de las opciones de tiempo de ejecución que hayas seleccionado al crear la cuenta de Azure Function.
+4. Implementa y despliega la función:
+   - Antes de implementar, asegúrate de tener las herramientas adecuadas instaladas, como Azure CLI o el SDK de Azure Functions para Visual Studio.
+   - Utiliza las herramientas para compilar y empaquetar tu función en un archivo de implementación.
+   - Puedes implementar tu función directamente desde el IDE o utilizar la línea de comandos con los comandos específicos de tu herramienta.
+   - Durante el proceso de implementación, se creará una instancia de la función en tu cuenta de Azure Function y se desplegará el código de tu función en ella.
+```
+
+
+
+
+
 ## Tema 3: Implement user authentication and authorization - Mohamed A.
 
 ###  Preguntas:
@@ -59,6 +116,49 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
         Los tokens de acceso se obtienen mediante la autenticación exitosa del usuario y se utilizan para autorizar las solicitudes a los recursos protegidos. Estos tokens aseguran que solo los usuarios autenticados y autorizados puedan acceder a los recursos en Azure.
 
 	
+
+## Tema 4: Develop solutions that use blob storage - Miguel A.
+
+## Preguntas:
+
+**¿Qué es Azure Blob storage y cómo se utiliza para almacenar datos no estructurados?**
+
+```
+Azure Blob storage es un servicio de almacenamiento en la nube ofrecido por Microsoft Azure. Se utiliza para almacenar grandes cantidades de datos no estructurados, es decir, cualquier archivo que no precise de un esquema o una estructura rígida ( como puede ser JSON). Esto permite guardar y acceder a datos de cualquier tipo sin la necesidad de definir una estructura de tabla o esquema previo.
+```
+
+
+
+**¿Cuáles son los tipos de blobs que se pueden almacenar en Azure Blob storage?**
+
+```
+Blobs de bloque (archivos de texto, videos, imagenes, documentos, etc), Blobs de página (discos virtuales), Blobs de apéndice, Blobs en frío (para almacenar datos que se visitan con baja frecuencia) y Blobs en caliente (para almacenar datos que se visitan con alta frecuencia).
+```
+
+
+
+**¿Cómo se accede y se administra el almacenamiento de blobs en Azure?**
+
+```
+1. Portal de Azure:
+   - El Portal de Azure proporciona una interfaz gráfica para administrar y acceder al almacenamiento de blobs.
+   - Puedes crear y configurar cuentas de almacenamiento, contenedores de blobs y establecer permisos de acceso a través del portal.
+   - Además, puedes ver, descargar y cargar blobs, así como realizar operaciones básicas de administración.
+2. Azure Storage Explorer:
+   - Azure Storage Explorer es una aplicación de escritorio que te permite administrar y trabajar con el almacenamiento de blobs y otros servicios de almacenamiento de Azure de forma fácil e intuitiva.
+   - Puedes explorar tus cuentas de almacenamiento, navegar por los contenedores de blobs, ver, descargar, cargar y eliminar blobs, y administrar las propiedades y permisos de los blobs.
+3. Azure CLI:
+   - Azure CLI (Command-Line Interface) es una herramienta de línea de comandos que te permite interactuar con Azure y administrar recursos, incluido el almacenamiento de blobs.
+   - Puedes usar comandos específicos de Azure CLI para crear y configurar cuentas de almacenamiento, contenedores de blobs, y realizar operaciones como subir, descargar y eliminar blobs.
+   - La Azure CLI ofrece una interfaz de línea de comandos poderosa y flexible para automatizar tareas y operaciones de administración.
+4. SDK y API de Azure:
+   - Los SDK de Azure y las API proporcionan bibliotecas de desarrollo y conjuntos de funciones para interactuar con el almacenamiento de blobs en Azure.
+   - Puedes utilizar los SDK y las API en tu aplicación para realizar operaciones como subir, descargar, eliminar y administrar blobs.
+   - Los SDK están disponibles para varios lenguajes de programación, como .NET, Java, Python, Node.js, entre otros.
+```
+
+
+
 ## Tema 5:  Implement Azure App Service Web Apps - Mohamed A.
 
 ### Preguntas
@@ -113,14 +213,14 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
         -Mensaje de excepción
         -Tipo de excepción
         -Pila de llamadas
-        
+
 **Diagnóstico de problemas de rendimiento en Application Insights**
     Para diagnosticar problemas de rendimiento del rol web, podemos comprobar los siguientes datos en la página Rendimiento de la instancia de Application Insights:
 
     El rol web solicita el tiempo de respuesta
     CPU, memoria, E/S de disco, E/S de red de instancia de rol web
     En la pestaña Operaciones , la tabla1 de operaciones con errores muestra el nombre de la operación de solicitud, la duración y el resumen del recuento de solicitudes. Seleccione una operación y actualizará el gráfico de métricas2 para mostrar el volumen de solicitudes y el gráfico de métricas de duración.
-
+    
     La pestaña Roles muestra los datos de métricas más relacionados con el servidor de Cloud Service, como cpu, memoria disponible, las solicitudes controladas por cada instancia, etc.
 
 **Alerta en Application Insights**
@@ -140,9 +240,11 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
 **- ¿Cómo se configura y se utiliza Application Insights para el diagnóstico y solución de problemas en una aplicación?**
 
     Cuando Application Insights está habilitado en Cloud Service, la configuración de diagnóstico debe habilitarse al mismo tiempo. Algunos datos y registros de métricas recopilados por la configuración de diagnóstico se enviarán a Application Insights.
-
+    
     Para el rol web, hay nueve métricas que tienen datos que se recopilarán automáticamente incluso si el contador de rendimiento está deshabilitado en la configuración de diagnóstico. Los datos de estas nueve métricas se guardan en la tabla performanceCounter de Application Insights. Otras métricas, como \Process(w3wp)\% Processor Time, se guardarán en la tabla customMetrics cuando el contador de rendimiento esté habilitado.
-
+    
     Para el rol de trabajo, si el contador de rendimiento está deshabilitado en la configuración diagnóstico, no habrá datos de métricas de rendimiento recopilados y guardados automáticamente en Application Insights.
-
+    
     Para ambos, los datos de métricas de HeartBeatState siempre se guardan automáticamente en Application Insights. Esta métrica se usa para identificar si la instancia sigue en buen estado en el nivel de servidor. Se desencadenará cada 15 minutos y se guardará en la tabla customMetrics . Los demás datos de métricas de rendimiento deben habilitarse manualmente en el contador de rendimiento en configuración de diagnóstico.
+
+
