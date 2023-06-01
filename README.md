@@ -42,6 +42,36 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
 	
 	6- Una vez creado el punto de conexión de CDN, las optimizaciones de DSA se aplican a todos los archivos que coincidan con determinados criterios.
 
+### Tema 3: Implement user authentication and authorization - Mohamed A.
+
+- [x] Preguntas:
+  - ¿Qué es la Plataforma de Identidad de Microsoft y cómo se utiliza para la autenticación de usuarios?
+            
+         La Plataforma de Identidad de Microsoft es un conjunto de herramientas y servicios que te ayuda a controlar quién tiene acceso a tus aplicaciones y servicios en la nube de Microsoft Azure. 
+        Cuando un usuario intenta acceder a una aplicación o servicio protegido, se le solicitará que proporcione sus credenciales de Microsoft, como su dirección de correo electrónico y contraseña. Estas credenciales son verificadas por la plataforma de identidad para asegurarse de que el usuario es quien dice ser. Si las credenciales son válidas, el usuario obtiene acceso a la aplicación o servicio. La plataforma de identidad también puede ofrecer opciones adicionales de autenticación, como el uso de autenticación de dos factores para una mayor seguridad.
+
+  - ¿Cuál es el flujo de autenticación más común al utilizar la Plataforma de Identidad de Microsoft?
+
+        El flujo de autenticación más común al utilizar la Plataforma de Identidad de Microsoft se llama "flujo de autorización de código". En este flujo, cuando un usuario intenta acceder a una aplicación protegida, se le redirige a la página de inicio de sesión de Microsoft. Allí, el usuario ingresa sus credenciales de Microsoft (como su dirección de correo electrónico y contraseña). Después de verificar las credenciales, se genera un código de autorización y se envía de vuelta a la aplicación. Luego, la aplicación intercambia este código por un token de acceso, que permite al usuario acceder a los recursos protegidos dentro de la aplicación. Este flujo de autenticación garantiza que solo los usuarios autorizados puedan acceder a las aplicaciones en Azure.
+
+  - ¿Cómo se obtienen y se utilizan los tokens de acceso para autorizar solicitudes a recursos protegidos?
+            
+        Los tokens de acceso se obtienen mediante la autenticación exitosa del usuario y se utilizan para autorizar las solicitudes a los recursos protegidos. Estos tokens aseguran que solo los usuarios autenticados y autorizados puedan acceder a los recursos en Azure.
+
+	
+### Tema 5:  Implement Azure App Service Web Apps - Mohamed A.
+
+- [x] Preguntas
+  - ¿Cuáles son las características principales de Azure App Service?	
+        
+        Azure App Service es una plataforma de alojamiento en la nube que permite a los desarrolladores desplegar y gestionar aplicaciones web de manera sencilla. Proporciona características como escalabilidad automática, integración con otros servicios de Azure y soporte multiplataforma, lo que facilita la creación y el despliegue de aplicaciones web altamente escalables y robustas. Con App Service, los desarrolladores pueden centrarse en la lógica de su aplicación sin preocuparse por la infraestructura subyacente, lo que les permite ahorrar tiempo y esfuerzo en la gestión de servidores y recursos.
+  - ¿Cómo se configura y escala una aplicación web en Azure App Service?	
+        
+        Para configurar y escalar una aplicación web en Azure App Service, primero debes crear una instancia de App Service en el portal de Azure. Luego, puedes subir tu código fuente o utilizar una plantilla predefinida para configurar tu aplicación. Puedes establecer la configuración de la aplicación, como las variables de entorno y las conexiones a bases de datos. Para escalar, puedes utilizar la opción de escala automática para ajustar automáticamente la capacidad de la aplicación según la carga de tráfico, o puedes optar por la escala manual y ajustar la cantidad de instancias según tus necesidades. Con estas configuraciones y escalabilidad flexibles, puedes asegurarte de que tu aplicación web en Azure App Service pueda satisfacer la demanda de los usuarios de manera eficiente.
+  - ¿Qué es un plan de App Service y cómo se relaciona con las aplicaciones web?	
+
+        Un plan de App Service en Azure es una opción de suscripción que determina los recursos y características disponibles para alojar y ejecutar aplicaciones web en Azure App Service. Un plan de App Service define la cantidad de potencia de procesamiento, memoria y almacenamiento asignada a tus aplicaciones web. Puedes seleccionar diferentes niveles de planes, como Free, Shared, Basic, Standard y Premium, dependiendo de tus necesidades y presupuesto. Cada plan de App Service puede alojar una o más aplicaciones web, lo que te permite agrupar y gestionar varias aplicaciones juntas, compartiendo los mismos recursos y configuraciones. Al elegir el plan de App Service adecuado, puedes asegurarte de que tus aplicaciones web tengan los recursos necesarios para funcionar de manera eficiente y escalable en Azure.
+
 ## Tema 6: Troubleshoot solutions by using Application Insights - Antonio Miralles Gutiérrez
 ## Preguntas:
 **- ¿Qué es Azure Application Insights y cómo se utiliza para el monitoreo de aplicaciones?**
