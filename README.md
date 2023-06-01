@@ -42,9 +42,9 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
 	
 	6- Una vez creado el punto de conexión de CDN, las optimizaciones de DSA se aplican a todos los archivos que coincidan con determinados criterios.
 
-### Tema 3: Implement user authentication and authorization - Mohamed A.
+## Tema 3: Implement user authentication and authorization - Mohamed A.
 
-- [x] Preguntas:
+###  Preguntas:
   - ¿Qué es la Plataforma de Identidad de Microsoft y cómo se utiliza para la autenticación de usuarios?
             
          La Plataforma de Identidad de Microsoft es un conjunto de herramientas y servicios que te ayuda a controlar quién tiene acceso a tus aplicaciones y servicios en la nube de Microsoft Azure. 
@@ -59,9 +59,9 @@ Para configurar un punto de conexión de CDN para la optimización de DSA median
         Los tokens de acceso se obtienen mediante la autenticación exitosa del usuario y se utilizan para autorizar las solicitudes a los recursos protegidos. Estos tokens aseguran que solo los usuarios autenticados y autorizados puedan acceder a los recursos en Azure.
 
 	
-### Tema 5:  Implement Azure App Service Web Apps - Mohamed A.
+## Tema 5:  Implement Azure App Service Web Apps - Mohamed A.
 
-- [x] Preguntas
+### Preguntas
   - ¿Cuáles son las características principales de Azure App Service?	
         
         Azure App Service es una plataforma de alojamiento en la nube que permite a los desarrolladores desplegar y gestionar aplicaciones web de manera sencilla. Proporciona características como escalabilidad automática, integración con otros servicios de Azure y soporte multiplataforma, lo que facilita la creación y el despliegue de aplicaciones web altamente escalables y robustas. Con App Service, los desarrolladores pueden centrarse en la lógica de su aplicación sin preocuparse por la infraestructura subyacente, lo que les permite ahorrar tiempo y esfuerzo en la gestión de servidores y recursos.
