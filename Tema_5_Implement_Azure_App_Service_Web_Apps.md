@@ -10,3 +10,8 @@
   - ¿Qué es un plan de App Service y cómo se relaciona con las aplicaciones web?	
 
         Un plan de App Service en Azure es una opción de suscripción que determina los recursos y características disponibles para alojar y ejecutar aplicaciones web en Azure App Service. Un plan de App Service define la cantidad de potencia de procesamiento, memoria y almacenamiento asignada a tus aplicaciones web. Puedes seleccionar diferentes niveles de planes, como Free, Shared, Basic, Standard y Premium, dependiendo de tus necesidades y presupuesto. Cada plan de App Service puede alojar una o más aplicaciones web, lo que te permite agrupar y gestionar varias aplicaciones juntas, compartiendo los mismos recursos y configuraciones. Al elegir el plan de App Service adecuado, puedes asegurarte de que tus aplicaciones web tengan los recursos necesarios para funcionar de manera eficiente y escalable en Azure.
+
+### Identificar y explicar (comprobar si es posible) de la batería de Preguntas 3 preguntas por cada integrante relacionadas con Azure App Service:
+- QUESTION 1 page 191
+- QUESTION 3 page 194
+- QUESTION 8 page 199
