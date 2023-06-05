@@ -39,4 +39,41 @@ Explicación:
     La solución propuesta cumple con los requisitos establecidos. Azure Cache for Redis proporciona un almacenamiento en caché de alto rendimiento y escalable que puede compartirse entre múltiples aplicaciones web. Permite el acceso concurrente controlado para lecturas y una sola escritura en los datos de estado de sesión. Además, puede guardar respuestas HTTP completas para solicitudes concurrentes, lo que satisface todos los requisitos mencionados en la pregunta.
 
 - QUESTION 3 page 194
+
+You plan to deploy a web app to App Service on Linux. You create an App Service plan. You create and push a custom Docker image that contains the web app to Azure Container Registry.
+You need to access the console logs generated from inside the container in real-time.
+How should you complete the Azure CLI command? To answer, select the appropriate options in the answer area.
+
+Explicación:
+
+      Recuadro 1: config
+      Para configurar el registro de eventos para una aplicación web, utiliza el comando: az webapp log config
+
+      Recuadro 2: --docker-container-logging
+      La sintaxis incluye:
+      az webapp log config [--docker-container-logging {filesystem, off}]
+
+      Recuadro 3: webapp
+      Para descargar el historial de registros de una aplicación web como un archivo zip, utiliza el comando: az webapp log download
+
+      Recuadro 4: download
+
+
 - QUESTION 8 page 199
+
+You are developing an Azure App Service hosted ASP.NET Core web app to deliver video-on-demand streaming media. You enable an Azure Content Delivery Network (CDN) Standard for the web endpoint. Customer videos are downloaded from the web app by using the following example URL: http:// www.contoso.com/content.mp4?quality=1
+All media content must expire from the cache after one hour. Customer videos with varying quality must be delivered to the closest regional point of presence (POP) node.
+You need to configure Azure CDN caching rules.
+Which options should you use? To answer, select the appropriate options in the answer area.
+
+Explicación:
+      
+      Recuadro 1: Override
+      Sobrescribir: Ignora la duración de caché proporcionada por el origen; en su lugar, utiliza la duración de caché proporcionada. Esto no sobrescribirá cache-control: no-cache.
+      Establecer si falta: Respeta las cabeceras de directiva de caché proporcionadas por el origen, si existen; de lo contrario, utiliza la duración de caché proporcionada.
+
+      Recuadro 2: 1 hora
+      Todo el contenido multimedia debe expirar en la caché después de una hora.
+
+      Recuadro 3: Cachear cada URL única
+      Cachear cada URL única: En este modo, cada solicitud con una URL única, incluyendo la cadena de consulta, se trata como un recurso único con su propia caché. Por ejemplo, la respuesta del servidor de origen para una solicitud de ejemplo.ashx?q=test1 se almacena en la ubicación de caché y se devuelve para cachés posteriores con la misma cadena de consulta. Una solicitud de ejemplo.ashx?q=test2 se almacena en caché como un recurso separado con su propia configuración de tiempo de vida.
