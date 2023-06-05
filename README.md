@@ -1,12 +1,12 @@
 # FirstAzureDevelopment
->
+>#Colaboradores:
 > ## Antonio Miralles Gutiérrez
 >
 > ## Mohamed A.
 > 
 > ## Miguel Aparicio García-Donas
 
-## Se han respondido las distintas preguntas de la bateria de clases, 3 dadas por el trabajo y 3 de la bateria por cada temario, 2 temarios por cada colaborador:
+### En este repositorio se han respondido a 6 preguntas por cada tema propuesto. Las primeras 3 preguntas son teóricas y las otras 3 son propuestas por un bateria de preguntas dada en clase. Cada colaborador ha realizado 2 temas según aparece en el siguiente listado:
 
 
 ### Tema 1: Azure CDN (Content Delivery Network) - Antonio Miralles Gutiérrez
