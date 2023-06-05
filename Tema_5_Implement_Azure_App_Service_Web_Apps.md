@@ -13,5 +13,30 @@
 
 ### Identificar y explicar (comprobar si es posible) de la batería de Preguntas 3 preguntas por cada integrante relacionadas con Azure App Service:
 - QUESTION 1 page 191
+
+You are developing and deploying several ASP.NET web applications to Azure App Service. You plan to save session state information and HTML output.
+
+You must use a storage mechanism with the following requirements:
+
+- Share session state across all ASP.NET web applications.
+- Support controlled, concurrent access to the same session state data for multiple readers and a single writer.
+- Save full HTTP responses for concurrent requests.
+
+You need to store the information.
+
+Proposed Solution: Deploy and configure Azure Cache for Redis. Update the web applications.
+
+Does the solution meet the goal?
+
+A. Yes 
+
+B. No
+
+Correct Answer: A
+
+Explicación:
+   
+    La solución propuesta cumple con los requisitos establecidos. Azure Cache for Redis proporciona un almacenamiento en caché de alto rendimiento y escalable que puede compartirse entre múltiples aplicaciones web. Permite el acceso concurrente controlado para lecturas y una sola escritura en los datos de estado de sesión. Además, puede guardar respuestas HTTP completas para solicitudes concurrentes, lo que satisface todos los requisitos mencionados en la pregunta.
+
 - QUESTION 3 page 194
 - QUESTION 8 page 199
