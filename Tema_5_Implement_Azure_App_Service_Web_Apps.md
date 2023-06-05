@@ -44,7 +44,7 @@ You plan to deploy a web app to App Service on Linux. You create an App Service 
 You need to access the console logs generated from inside the container in real-time.
 How should you complete the Azure CLI command? To answer, select the appropriate options in the answer area.
 
-      véase la imagen de dicha pagina
+![image](/img/screen3.png)
 
 Explicación:
 
@@ -68,8 +68,11 @@ All media content must expire from the cache after one hour. Customer videos wit
 You need to configure Azure CDN caching rules.
 Which options should you use? To answer, select the appropriate options in the answer area.
 
-      véase la imagen de dicha pagina
+![image](/img/screen4.png)
 
+Correct Answer:
+
+![image](/img/screen5.png)
 
 Explicación:
       
