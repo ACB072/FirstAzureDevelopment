@@ -65,14 +65,12 @@ Explicación:
 
 You need to insert code at line LE03 of LoginEvent.cs to ensure that all authentication events are processed correctly.
 
-![image](/screen1.png)
-      véase la imagen de dicha pagina
+![image](/img/screen1.png)
 
 
  Correct Answer: 
 
- ![image](/screen2.png)
-       véase la imagen de dicha pagina
+ ![image](/img/screen2.png)
 
 
 Explicación:
