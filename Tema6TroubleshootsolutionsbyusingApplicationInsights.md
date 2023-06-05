@@ -1,72 +1,131 @@
-## Tema 1: Azure CDN (Content Delivery Network) - Antonio Miralles Gutiérrez
+## Tema 6: Troubleshoot solutions by using Application Insights - Antonio Miralles Gutiérrez
 ## Preguntas:
-**- ¿Qué es Azure CDN y cuál es su propósito en el despliegue de aplicaciones web?**
-	
-	Azure Content Delivery Network es una red distribuida de servidores que puede proporcionar contenido web a los usuarios. Este tipo de red guarda el contenido en caché  de los servidores perimetrales en ubicaciones POP que estan cerca de los usuarios finales.
-	
-	Azure CDN ofrece a los desarrolladores una solución global para la entrega rápida de contenido con alto ancho de banda a los usuarios mediante el almacenamiento en caché del contenido en nodos físicos estratégicamente situados en todo el mundo. Azure CDN también puede acelerar el contenido dinámico, que no se puede almacenar en caché, mediante varias optimizaciones de red con POP de CDN. Por ejemplo, la optimización de rutas para omitir el protocolo de puerta de enlace de borde (BGP).
-	Entre las ventajas de usar Azure CDN para entregar los recursos de un sitio web se incluyen:
-	
-	- Mayor rendimiento y experiencia para los usuarios finales, especialmente cuando se utilizan aplicaciones en las que los usuarios finales necesitan varias solicitudes de recorridos de ida y vuelta para cargar contenidos.
-	- Gran escalado para mejorar la administración de cargas instantáneas pesadas, por ejemplo, al comienzo de un evento de lanzamiento de un producto.
-	- Distribución de las solicitudes de usuario y entrega del contenido directamente desde los servidores perimetrales, de forma que se envía menos tráfico al servidor de origen.
+**- ¿Qué es Azure Application Insights y cómo se utiliza para el monitoreo de aplicaciones?**
 
-**- ¿Cuáles son los beneficios de utilizar Azure CDN en términos de rendimiento y escalabilidad?**
-
-	Azure CDN realiza un metodo sencillo y eficaz de compresion de archivos para mejorar la velocidad de transferencia y aumentar el rendimiento de la carga de páginas web, ya que se reduce el tamaño del archivo antes de enviarlo desde el servidor, reduciendo los costes de ancho de banda y proporciona una mayor capacidad de respuesta para los usuarios
-
-**- ¿Cómo se configura y se utiliza Azure CDN para acelerar la entrega de contenido estático y dinámico en una aplicación web?**
-
-	La funcionalidad estándar de la red de entrega de contenido (CDN) incluye la posibilidad de almacenar en caché los archivos más cerca de los usuarios finales para acelerar la entrega de archivos estáticos. Pero con las aplicaciones web dinámicas, no es posible almacenar en caché ese contenido en ubicaciones perimetrales, porque el servidor genera el contenido en respuesta al comportamiento del usuario. Acelerar la entrega de este tipo de contenido es más complejo que el almacenamiento en caché perimetral tradicional y requiere una solución integral en la que se ajusten con precisión todos los elementos de toda la ruta de datos, desde el comienzo hasta la entrega. Con la optimización de sitios dinámicos (DSA) de Azure CDN, el rendimiento de las páginas web con contenido dinámico se ha mejorado de un modo contrastable.
-
-Para configurar un punto de conexión de CDN para la optimización de DSA mediante Azure Portal:
-
-	1- En la página Perfil de CDN, seleccione Punto de conexión.
-	Aparecerá el panel Agregar un punto de conexión.
+	Application Insights es una extensión de Azure Monitor y proporciona características de APM. Las herramientas de APM son útiles para supervisar aplicaciones de desarrollo, pruebas y producción de las siguientes maneras:
 	
-	2- En Optimized for (Optimizado para), seleccione Aceleración de sitios dinámicos.
+	- De manera proactiva comprende cómo funciona una aplicación.
+	- De manera reactiva revisa los datos de ejecución de la aplicación para determinar la causa de un incidente.
 	
-	3- En Ruta de acceso de sondeo, escriba una ruta de acceso válida a un archivo.
+	La manera más fácil de empezar a consumir Application Insights es mediante Azure Portal y las experiencias visuales integradas. Los usuarios avanzados pueden consultar los datos subyacentes directamente para crear visualizaciones personalizadas mediante paneles y libros de Azure Monitor.
 	
-	4- La ruta de acceso de sondeo es una característica específica de DSA y se necesita una ruta de acceso válida para la creación. DSA usa un pequeño archivo de ruta de acceso de sondeo en el servidor de origen para optimizar las configuraciones de enrutamiento de red para la red CDN. Para el archivo de ruta de acceso de sondeo, puede descargar y cargar el archivo de ejemplo en su sitio, o usar un recurso existente en el origen que tenga un tamaño de unos 10 KB.
+	Considere la posibilidad de empezar con el mapa de aplicación para obtener una vista general. Use la experiencia de búsqueda para restringir rápidamente la telemetría y los datos por tipo y fecha y hora. También puede buscar en los datos (por ejemplo, con seguimientos de registro) y filtrar por una operación correlacionada determinada de interés.
 	
-	5- Escriba las demás opciones de punto de conexión necesarias (para más información, consulte Crear un nuevo punto de conexión de CDN) y luego haga clic en Agregar.
+	Hay dos vistas que son especialmente útiles:
 	
-	6- Una vez creado el punto de conexión de CDN, las optimizaciones de DSA se aplican a todos los archivos que coincidan con determinados criterios.
+	Vista de rendimiento: obtenga información detallada sobre el rendimiento de la aplicación o la API y las dependencias de bajada. También puede encontrar un ejemplo representativo para explorar de un extremo a otro.
+	Vista de error: comprenda qué componentes o acciones generan errores, y errores y excepciones de prioridad. Las vistas integradas son útiles para realizar un seguimiento del estado de la aplicación de forma proactiva y para el análisis reactivo de la causa principal.
+	Cree alertas de Azure Monitor para indicar posibles problemas si las partes de la aplicación o los componentes se desvían de la línea de base establecida.
+
+**- ¿Cuáles son las principales características y beneficios de Application Insights?**
+
+**Configuración de Application Insights para las aplicaciones de could service**
+
+    En Visual Studio Explorador de soluciones, en Roles de servicio> en la nube, abra las propiedades de cada rol.
+    En Configuración, active la casilla Enviar datos de diagnóstico a Application Insights y, a continuación, seleccione la instancia de Application Insights que creó antes.
+    En el caso de los roles web, esta opción proporciona supervisión del rendimiento, alertas, diagnósticos y análisis de uso. Para otros roles, puede buscar y supervisar Azure Diagnostics, como los contadores de reinicio y rendimiento.
+
+**Diagnóstico de errores en Application Insights**
+
+    Application Insights incluye una experiencia de administración del rendimiento de aplicaciones curada para ayudar a diagnosticar errores en las aplicaciones supervisadas. Para ver los errores en la Azure Portal, vaya a la instancia de Application Insights y, a continuación, seleccione Errores en Investigar.
+    Verá las tendencias de tasa de errores de las solicitudes, cuántos de ellos producen errores y cuántos usuarios se ven afectados. En la tablade operaciones con error 1 se muestran las solicitudes con errores agrupadas por la dirección URL de la solicitud. En la vista general2, verá los tres primeros códigos de respuesta, los tres tipos de excepción principales y los tres tipos de dependencia con errores principales.
+    
+    Para revisar ejemplos representativos de cada uno de estos subconjuntos de operaciones, seleccione el vínculo correspondiente. Por ejemplo, para diagnosticar excepciones, puede seleccionar el recuento de una excepción determinada que se va a presentar con la pestaña Detalles de transacción de un extremo a otro .
+    La siguiente información de los detalles de la transacción de un extremo a otro es útil para solucionar problemas:
+    
+    Marca de tiempo de la solicitud
+        -El código de respuesta
+        -Tiempo de respuesta
+        -Mensaje de excepción
+        -Tipo de excepción
+        -Pila de llamadas
+
+**Diagnóstico de problemas de rendimiento en Application Insights**
+    Para diagnosticar problemas de rendimiento del rol web, podemos comprobar los siguientes datos en la página Rendimiento de la instancia de Application Insights:
+
+    El rol web solicita el tiempo de respuesta
+    CPU, memoria, E/S de disco, E/S de red de instancia de rol web
+    En la pestaña Operaciones , la tabla1 de operaciones con errores muestra el nombre de la operación de solicitud, la duración y el resumen del recuento de solicitudes. Seleccione una operación y actualizará el gráfico de métricas2 para mostrar el volumen de solicitudes y el gráfico de métricas de duración.
+    
+    La pestaña Roles muestra los datos de métricas más relacionados con el servidor de Cloud Service, como cpu, memoria disponible, las solicitudes controladas por cada instancia, etc.
+
+**Alerta en Application Insights**
+
+    La alerta permite a los usuarios establecer reglas personalizadas para supervisar el estado de la instancia del rol de servicio en la nube. Cuando se produce el evento supervisado, los usuarios pueden recibir una notificación por correo electrónico.
+
+  1-Las reglas contienen principalmente dos partes importantes: condiciones y acciones. Para crear una alerta, siga estos pasos:
+
+  2-En el Azure Portal, vaya a la instancia de Application Insights y seleccione Alerta en la sección Supervisión. En esta página, puede ver todas las alertas desencadenadas. Expanda + Crear y, a continuación, seleccione Regla de alertas.
+
+  3-Configure las condiciones. La condición consta de tres puntos: Signal, Dimension y Alert Logic. Para más información, consulte Tipos de alertas de Azure Monitor.
+
+  4-Establezca la acción cuando se desencadene la regla de alerta. Puede crear un nuevo grupo de acciones y agregarlo a esta regla de alertas o usar un grupo de acciones existente.
+
+    En la página Detalles , seleccione la suscripción y el grupo de recursos en los que guardar la regla de alerta y establezca su nombre y nivel de gravedad.
+
+**- ¿Cómo se configura y se utiliza Application Insights para el diagnóstico y solución de problemas en una aplicación?**
+
+    Cuando Application Insights está habilitado en Cloud Service, la configuración de diagnóstico debe habilitarse al mismo tiempo. Algunos datos y registros de métricas recopilados por la configuración de diagnóstico se enviarán a Application Insights.
+    
+    Para el rol web, hay nueve métricas que tienen datos que se recopilarán automáticamente incluso si el contador de rendimiento está deshabilitado en la configuración de diagnóstico. Los datos de estas nueve métricas se guardan en la tabla performanceCounter de Application Insights. Otras métricas, como \Process(w3wp)\% Processor Time, se guardarán en la tabla customMetrics cuando el contador de rendimiento esté habilitado.
+    
+    Para el rol de trabajo, si el contador de rendimiento está deshabilitado en la configuración diagnóstico, no habrá datos de métricas de rendimiento recopilados y guardados automáticamente en Application Insights.
+    
+    Para ambos, los datos de métricas de HeartBeatState siempre se guardan automáticamente en Application Insights. Esta métrica se usa para identificar si la instancia sigue en buen estado en el nivel de servidor. Se desencadenará cada 15 minutos y se guardará en la tabla customMetrics . Los demás datos de métricas de rendimiento deben habilitarse manualmente en el contador de rendimiento en configuración de diagnóstico.
+
+
 
 ### Preguntas de la bateria:
-### QUESTION 1 - Pagina 4
+### QUESTION 4 - Pagina 195
+You develop and deploy an ASP.NET web app to Azure App Service. You use Application Insights
+telemetry to monitor the app.
+You must test the app to ensure that the app is available and responsive from various points around the
+world and at regular intervals. If the app is not responding, you must send an alert to support staff.
+You need to configure a test for the web app.
+Which two test types can you use? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+A. integration
+B. multi-step web
+C. URL ping
+D. unit
+E. load
 
- HOTSPOT You need to configure Azure CDN for the Shipping web site. Which configuration options should you use? To answer, select the appropriate options in the answer area
+    La respuesta seria B y C, dado que existen 3 tipos de de test de avalabilidad.
+    - URL ping test: Que utiliza una peticion avanzada HTTP para validar que un punto final esta respondiendo, midiendo el rendimiento asociado con la respuesta. Se puede crear a traves de el portal de azure dentro de un recurso de Application Insights.
+    - Multi-step web test: Este tipo de test ha sido descatalogado en las ultimas versiones de Azure, pero servia para monitorear una secuencia URL grabada y las interacciones dentro de la web a traves de varios pequeños tests. Depende principalmente de archivos de prueba en Visual Studio.
+    - Custom Track Availability Tests: Este tipo de test se recomienda a manera de sustitución del Multi-step web test, ayuda a monitorear una pagina web y ademas es mas comodo a la hora de crear los tests, ya que envia directamente la informacion de disponibilidad de una aplicación.
 
-    Segun los datos del caso practico, el tier de la aplicacion debe ser Standard, el perfil debe ser Akamai y la optimizacion debe ser Dynamic Site Acceleration, ya que incluye varias tecnicas que benefician la latencia y rendimiento del contenido dinamico. Algunos ejemplos para su uso serian los resultados de una busqueda, transacciones de venta, o datos a tiempo real. Ademas, permite seguir usando el cache del CDN para los datos estaticos
+### QUESTION 6 - Pagina 197
+You are developing an ASP.NET Core Web API web service. The web service uses Azure Application
+Insights for all telemetry and dependency tracking. The web service reads and writes data to a database
+other than Microsoft SQL Server.
+You need to ensure that dependency tracking works for calls to the third-party database.
+Which two dependency telemetry properties should you use? Each correct answer presents part of the
+solution.
+NOTE: Each correct selection is worth one point.
+A. Telemetry.Context.Cloud.RoleInstance
+B. Telemetry.Id
+C. Telemetry.Name
+D. Telemetry.Context.Operation.Id
+E. Telemetry.Context.Session.Id
 
-### QUESTION 6 - Pagina 88
+    La respuesta seria B y D, ya que cada elemento de telemetría de solicitud tiene su propia identificación que lo identifica de manera única y global. Y todos los elementos de telemetría (como seguimientos y excepciones) que están asociados con la solicitud deben establecer la operación_parentId al valor de la identificación de la solicitud
 
-DRAG DROP Your company has several websites that use a company logo image. You use Azure Content Delivery Network (CDN) to store the static image. You need to determine the correct process of how the CDN and the Point of Presence (POP) server will distribute the image and list the items in the correct order. In which order do the actions occur? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+### QUESTION 14 - Pagina 207
+DRAG DROP
+You develop an ASP.NET Core MVC application. You configure the application to track webpages and
+custom events.
+You need to identify trends in application usage.
+Which Azure Application Insights Usage Analysis features should you use? To answer, drag the appropriate
+features to the correct requirements. Each feature may be used once, more than once, or not at all. You
+may need to drag the split bar between panes or scroll to view content.
 
-    La solucion consistiria en 4 pasos:
-    
-    Paso 1: Un usuario solicita un archivo ( mediante una URL con un nombre de dominio especial, como <endpoint name>.azureedge.net. Este nombre puede ser un nombre de host de punto final o un dominio personalizado. El DNS enruta la solicitud a la ubicación POP con mejor rendimiento, que suele ser el POP más cercano geográficamente al usuario.
-    
-    Paso 2: Si ningún servidor perimetral en el POP tiene el archivo en su caché, el POP solicita el archivo al servidor de origen.
-    El servidor de origen puede ser una aplicación web de Azure, un servicio en la nube de Azure, una cuenta de almacenamiento de Azure o cualquier servidor web accesible.
-    
-    Paso 3: Un servidor perimetral en el POP almacena en caché el archivo y lo devuelve al solicitante original (Alice). El archivo permanece en caché en el servidor perimetral en el POP hasta el tiempo de vida (TTL) especificado por sus encabezados HTTP caduca. Si el servidor de origen no especificó un TTL, el TTL predeterminado es de siete días.
-    
-    Paso 4: Los usuarios adicionales pueden solicitar el mismo archivo usando la misma URL que usó el usuario original y pueden también se dirigirá al mismo POP.
-    
-    Si el TTL del archivo no ha caducado, el servidor perimetral POP devuelve el archivo directamente desde la memoria caché. Este
-    El proceso da como resultado una experiencia de usuario más rápida y receptiva.
-
-
-### QUESTION 8  - Pagina 199
-
-HOTSPOT 
-
-You are developing an Azure App Service hosted ASP.NET Core web app to deliver video-on-demand streaming media. You enable an Azure Content Delivery Network (CDN) Standard for the web endpoint. Customer videos are downloaded from the web app by using the following example URL: http:// www.contoso.com/content.mp4?quality=1 All media content must expire from the cache after one hour. Customer videos with varying quality must be delivered to the closest regional point of presence (POP) node. You need to configure Azure CDN caching rules. Which options should you use? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
-
-    Para asegurarnos que la pagina web escala automaticamente cuando la carga de la CPU esta alrededor del 85%,, debemos configurar la web app con el servicio Standar App Service Tier, ya que soporta el autoescalado y minimiza los costes. Mas adelante activamos el autoescalado dentro de la web app, añadimos la regla y la condicion para cuando sobrepase al 85%.
-
-
+	Las respuestas serian:
+	1- Users: Con lo que podremos conocer quien entra y sale de nuestra aplicación y  qué páginas les interesan más, dónde se encuentran sus usuarios y qué navegadores y sistemas operativos usan
+	
+	2- Impact: Analiza cómo los tiempos de carga y otras propiedades influyen en las tasas de conversión para varias partes de la aplicación, siendo más preciso, descubre cómo cualquier dimensión de una webview, un evento personalizado o una solicitud afecta el uso de una webview diferente o un evento personalizado.
+	
+	3- Retención: Ayuda a analizar cuántos usuarios regresan a la aplicación y con qué frecuencia realizan tareas específicas o logran objetivos. Por ejemplo, si ejecuta un sitio de juegos, podría comparar el número de usuarios que regresan al sitio después de perder un juego con el número de los que regresan después de ganar.
+	
+	4- User Flows: Visualiza como los usuarios navegan entre las distintas páginas y caracteristicas de la aplicacion, como donde los usuarios suelen dar click dentro de la pagina, como salen de ellas, cual es el sitio donde los usuarios han repetido varias veces la misma acción....
 
