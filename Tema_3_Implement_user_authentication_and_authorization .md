@@ -14,6 +14,72 @@
         Los tokens de acceso se obtienen mediante la autenticación exitosa del usuario y se utilizan para autorizar las solicitudes a los recursos protegidos. Estos tokens aseguran que solo los usuarios autenticados y autorizados puedan acceder a los recursos en Azure.
 
 ### Identificar y explicar (comprobar si es posible) de la batería de Preguntas 3 preguntas por cada integrante relacionadas con Azure Autenticación y Autorización:
-- QUESTION 18 page 157
-- QUESTION 26 page 166 
+- QUESTION 18 page 157:
+
+You provide an Azure API Management managed web service to clients. The back-end web service implements HTTP Strict Transport Security (HSTS).
+Every request to the backend service must include a valid HTTP authorization header. You need to configure the Azure API Management instance with an authentication policy. Which two policies can you use? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
+
+A. Basic Authentication
+
+B. Digest Authentication
+
+C. Certificate Authentication
+
+D. OAuth Client Credential Grant
+
+Correct Answer: CD 
+
+
+Explicación:
+
+      La pregunta plantea la necesidad de configurar una política de autenticación en una instancia de Azure API Management que consume un servicio web backend que implementa HTTP Strict Transport Security (HSTS) y requiere un encabezado de autorización HTTP válido en cada solicitud. Las dos opciones correctas para configurar la política de autenticación son:
+      C. Autenticación mediante certificado: Permite la autenticación basada en certificados para verificar la identidad del cliente.
+      D. Concesión de credenciales de cliente OAuth: Permite la autenticación mediante OAuth, utilizando un token de acceso válido y un secreto de cliente para verificar la identidad del cliente.
+      Estas dos políticas proporcionan una solución completa para autenticar las solicitudes al servicio backend a través de Azure API Management.
+- QUESTION 26 page 166:
+
+Your company is developing an Azure API hosted in Azure.
+You need to implement authentication for the Azure API to access other Azure resources. You have the following requirements:
+All API calls must be authenticated.
+Callers to the API must not send credentials to the API.
+Which authentication mechanism should you use?
+
+A. Basic
+
+B. Anonymous
+
+C. Managed identity 
+
+D. Client certificate
+
+Correct Answer: C 
+
+Explicación:
+
+    La pregunta plantea la necesidad de implementar autenticación para un API de Azure que accede a otros recursos de Azure. Los requisitos son que todas las llamadas al API deben estar autenticadas y los llamadores al API no deben enviar credenciales al API.
+
+    La opción correcta es C. Managed identity.
+
+
 - QUESTION 2 page 223
+
+You need to insert code at line LE03 of LoginEvent.cs to ensure that all authentication events are processed correctly.
+
+![image](/screen1.png)
+
+ Correct Answer: 
+
+ ![image](/screen2.png)
+
+Explicación:
+
+    Recuadro 1: id
+    id es un identificador único para el evento.
+
+    Recuadro 2: eventType
+    eventType es uno de los tipos de eventos registrados para esta fuente de eventos.
+
+    Recuadro 3: dataVersion
+    dataVersion es la versión de esquema del objeto de datos. El editor define la versión de esquema.
+
+    Los eventos de autenticación se utilizan para monitorear el inicio y cierre de sesión de los usuarios. Todos los eventos de autenticación deben ser procesados por el servicio de políticas. Los cierres de sesión deben ser procesados lo más rápido posible.
